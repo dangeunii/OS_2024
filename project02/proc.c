@@ -572,10 +572,10 @@ scheduler(void)
         // 만약 priority 숫자가 같다면 pid 작은 것을 먼저 실행
         struct proc *tmp;
         for(tmp = ptable.proc; tmp < &ptable.proc[NPROC]; tmp++){
-          if(tmp -> state == RUNNABLE && tmp ->level == 2 && tmp->priority > p->priority){
+          if(tmp -> state == RUNNABLE && tmp ->level == 3 && tmp->priority > p->priority){
             p = tmp;
           }
-          else if(tmp -> state == RUNNABLE && tmp ->level == 2 && tmp->priority == p->priority){
+          else if(tmp -> state == RUNNABLE && tmp ->level == 3 && tmp->priority == p->priority){
             if(tmp -> pid < p -> pid){
               p = tmp;
             }

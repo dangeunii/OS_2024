@@ -79,7 +79,7 @@ trap(struct trapframe *tf)
             if(p->tick >= 2 * (p->level) + 2){
               if(p -> level == 0){
                 // L0에서는 pid가 홀수면 L1로, 짝수면 L2로 보낸다.
-                if((p->pid) %2 == 0){
+                if((p->pid) %2 == 1){
                   p->level = 1;
                   p->tick = 0;
                 }
